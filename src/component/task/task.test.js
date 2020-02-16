@@ -17,4 +17,12 @@ describe("Tasks", () => {
 	const checkbox = component.find("input");
 	expect(checkbox.length).toEqual(1);
     });
+
+    it("should contain a check box", () => {
+	const checkbox = component.find("input");
+	const type = checkbox.props().type;
+	expect (type).toEqual("checkbox");
+	expect(checkbox.length).toEqual(1);
+    });
+
 });
