@@ -6,8 +6,11 @@ import Task from "./task.component";
 
 configure({adapter: new Adapter() });
 
-describe("Tasks", () => {
-    let component = shallow(<Task text="Do a thing"/>);
+describe("Task", () => {
+    const state = {
+	text: "Do a thing",
+    }
+    let component = shallow(<Task state={state} />);
 
     it("should render a component", () => {
 	expect(component).toBeDefined();

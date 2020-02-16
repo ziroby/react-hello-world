@@ -4,9 +4,7 @@ class Task extends React.Component {
     constructor(props) {
 	super(props);
 
-	this.state = {
-	    text: props.text,
-	};
+	this.state = props.state;
     }
     render() {
         return (
