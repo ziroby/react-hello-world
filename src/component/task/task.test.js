@@ -12,4 +12,9 @@ describe("Tasks", () => {
     it("should render a component", () => {
 	expect(component).toBeDefined();
     });
+
+    it("should contain a check box", () => {
+	const checkbox = component.find("input");
+	expect(checkbox.length).toEqual(1);
+    });
 });
