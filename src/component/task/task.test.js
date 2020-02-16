@@ -7,7 +7,7 @@ import Task from "./task.component";
 configure({adapter: new Adapter() });
 
 describe("Tasks", () => {
-    let component = shallow(<Task />);
+    let component = shallow(<Task text="Do a thing"/>);
 
     it("should render a component", () => {
 	expect(component).toBeDefined();
@@ -23,6 +23,17 @@ describe("Tasks", () => {
 	const type = checkbox.props().type;
 	expect (type).toEqual("checkbox");
 	expect(checkbox.length).toEqual(1);
+    });
+
+    it("should contain a label", () => {
+	const checkbox = component.find("label");
+	expect(checkbox.length).toEqual(1);
+    });
+
+    it("should contain a label with the right text", () => {
+    	const label = component.find("label");
+    	const text = label.text();
+    	expect (text).toEqual("Do a thing");
     });
 
 });

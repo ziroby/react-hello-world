@@ -1,9 +1,18 @@
 import React from "react";
 
 class Task extends React.Component {
+    constructor(props) {
+	super(props);
+
+	this.state = {
+	    text: props.text,
+	};
+    }
     render() {
         return (
-		<div>Testing 3:11 <input type="checkbox">Checkbox</input></div>
+		<div><label>{this.state.text}</label>
+		  <input type="checkbox">Checkbox</input>
+		</div>
         )
     }
 }
