@@ -19,5 +19,10 @@ describe("<HelloWorld />", () => {
 	expect(h1.length).toEqual(1);
     });
 
+    it("should contain an H1 element with the text 'Hello World!' ", () => {
+      const h1 = component.find("h1");
+      const expectedText = "Hello World!";
+      expect(h1.text()).toEqual(expectedText);
+  });
 });
 
